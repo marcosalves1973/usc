@@ -1,0 +1,5 @@
+C:\Users\renato\Documents\Visual Studio 2013\Projects\Trabalho\Trabalho.Helpers\bin\Debug\Trabalho.Helpers.dll
+C:\Users\renato\Documents\Visual Studio 2013\Projects\Trabalho\Trabalho.Helpers\bin\Debug\Trabalho.Helpers.pdb
+C:\Users\renato\Documents\Visual Studio 2013\Projects\Trabalho\Trabalho.Helpers\obj\Debug\Trabalho.Helpers.dll
+C:\Users\renato\Documents\Visual Studio 2013\Projects\Trabalho\Trabalho.Helpers\obj\Debug\Trabalho.Helpers.pdb
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Helpers\obj\Debug\Trabalho.Helpers.csprojResolveAssemblyReference.cache

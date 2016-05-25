@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TRABALHOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GANHADOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+    <Property Name="DATA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOGIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="USUARIO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="SENHA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TOKEN" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="RESTAURANTE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VOTACAO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LOGIN_ID" Type="bigint" Nullable="false" />
+    <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+    <Property Name="DATA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TRABALHO.dbo.GANHADORES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="GANHADORES">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="RESTAURANTE_ID" />
+      <PropertyRef Name="NOME" />
+      <PropertyRef Name="DATA" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DATA" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TRABALHO.dbo.MAIS_VOTADOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="MAIS_VOTADOS">
+    <Key>
+      <PropertyRef Name="RESTAURANTE_ID" />
+      <PropertyRef Name="NOME" />
+    </Key>
+    <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TOTAL" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TRABALHO.dbo.VOTACOES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VOTACOES">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LOGIN_ID" />
+      <PropertyRef Name="RESTAURANTE_ID" />
+      <PropertyRef Name="DATA" />
+      <PropertyRef Name="RESTAURANTE_NOME" />
+      <PropertyRef Name="LOGIN_NOME" />
+      <PropertyRef Name="USUARIO" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="LOGIN_ID" Type="bigint" Nullable="false" />
+    <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+    <Property Name="DATA" Type="datetime" Nullable="false" />
+    <Property Name="RESTAURANTE_NOME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LOGIN_NOME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="USUARIO" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TRABALHOModelStoreContainer">
+    <EntitySet Name="GANHADOR" EntityType="Self.GANHADOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESTAURANTE" EntityType="Self.RESTAURANTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VOTACAO" EntityType="Self.VOTACAO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GANHADORES" EntityType="Self.GANHADORES" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[GANHADORES].[ID] AS [ID], 
+[GANHADORES].[RESTAURANTE_ID] AS [RESTAURANTE_ID], 
+[GANHADORES].[NOME] AS [NOME], 
+[GANHADORES].[DATA] AS [DATA]
+FROM [dbo].[GANHADORES] AS [GANHADORES]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MAIS_VOTADOS" EntityType="Self.MAIS_VOTADOS" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[MAIS_VOTADOS].[RESTAURANTE_ID] AS [RESTAURANTE_ID], 
+[MAIS_VOTADOS].[NOME] AS [NOME], 
+[MAIS_VOTADOS].[TOTAL] AS [TOTAL]
+FROM [dbo].[MAIS_VOTADOS] AS [MAIS_VOTADOS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VOTACOES" EntityType="Self.VOTACOES" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[VOTACOES].[ID] AS [ID], 
+[VOTACOES].[LOGIN_ID] AS [LOGIN_ID], 
+[VOTACOES].[RESTAURANTE_ID] AS [RESTAURANTE_ID], 
+[VOTACOES].[DATA] AS [DATA], 
+[VOTACOES].[RESTAURANTE_NOME] AS [RESTAURANTE_NOME], 
+[VOTACOES].[LOGIN_NOME] AS [LOGIN_NOME], 
+[VOTACOES].[USUARIO] AS [USUARIO]
+FROM [dbo].[VOTACOES] AS [VOTACOES]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

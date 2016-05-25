@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7A335148-491F-4BEE-B54B-E5A44D2A8806}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trabalho.Dados</RootNamespace>
+    <AssemblyName>Trabalho.Dados</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dao\GanhadorDAO.cs" />
+    <Compile Include="Dao\LoginDAO.cs" />
+    <Compile Include="Dao\RelatorioDAO.cs" />
+    <Compile Include="Dao\RestauranteDAO.cs" />
+    <Compile Include="Dao\VotacaoDAO.cs" />
+    <Compile Include="GANHADOR.cs">
+      <DependentUpon>Trabalho.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GANHADORES.cs">
+      <DependentUpon>Trabalho.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\IGanhadorDAO.cs" />
+    <Compile Include="Interface\ILoginDAO.cs" />
+    <Compile Include="Interface\IRelatorioDAO.cs" />
+    <Compile Include="Interface\IRestauranteDAO.cs" />
+    <Compile Include="Interface\IVotacaoDAO.cs" />
+    <Compile Include="LOGIN.cs">
+      <DependentUpon>Trabalho.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MAIS_VOTADOS.cs">
+      <DependentUpon>Trabalho.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RESTAURANTE.cs">
+      <DependentUpon>Trabalho.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trabalho.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Trabalho.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trabalho.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Trabalho.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Trabalho.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Trabalho.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="VOTACAO.cs">
+      <DependentUpon>Trabalho.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VOTACOES.cs">
+      <DependentUpon>Trabalho.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Trabalho.Helpers\Trabalho.Helpers.csproj">
+      <Project>{ec0741c9-66ed-49c6-a2ff-178fff2b17f9}</Project>
+      <Name>Trabalho.Helpers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Trabalho.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Trabalho.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Trabalho.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Trabalho.edmx</DependentUpon>
+      <LastGenOutput>Trabalho.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Trabalho.edmx.diagram">
+      <DependentUpon>Trabalho.edmx</DependentUpon>
+    </None>
+    <None Include="Trabalho.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Trabalho.edmx</DependentUpon>
+      <LastGenOutput>Trabalho.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

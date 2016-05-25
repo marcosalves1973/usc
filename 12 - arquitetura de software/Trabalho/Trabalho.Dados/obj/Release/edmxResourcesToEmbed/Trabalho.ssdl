@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TRABALHOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="GANHADOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+    <Property Name="DATA" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOGIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" />
+    <Property Name="USUARIO" Type="varchar" MaxLength="30" />
+    <Property Name="SENHA" Type="varchar" MaxLength="30" />
+    <Property Name="TOKEN" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="RESTAURANTE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VOTACAO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LOGIN_ID" Type="bigint" Nullable="false" />
+    <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+    <Property Name="DATA" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TRABALHOModelStoreContainer">
+    <EntitySet Name="GANHADOR" EntityType="Self.GANHADOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESTAURANTE" EntityType="Self.RESTAURANTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VOTACAO" EntityType="Self.VOTACAO" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

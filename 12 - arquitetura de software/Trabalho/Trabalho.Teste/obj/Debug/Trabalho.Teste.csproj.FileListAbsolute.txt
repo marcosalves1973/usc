@@ -1,0 +1,14 @@
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\Trabalho.Teste.dll.config
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\Trabalho.Teste.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\Trabalho.Teste.pdb
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\Trabalho.Dados.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\Trabalho.Helpers.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\Trabalho.Negocios.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\EntityFramework.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\Trabalho.Dados.pdb
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\Trabalho.Helpers.pdb
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\Trabalho.Negocios.pdb
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\bin\Debug\EntityFramework.xml
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\obj\Debug\Trabalho.Teste.csprojResolveAssemblyReference.cache
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\obj\Debug\Trabalho.Teste.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Teste\obj\Debug\Trabalho.Teste.pdb

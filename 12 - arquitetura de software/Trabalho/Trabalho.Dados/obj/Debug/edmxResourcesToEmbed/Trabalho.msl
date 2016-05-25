@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TRABALHOModelStoreContainer" CdmEntityContainer="TRABALHOEntities">
+    <EntitySetMapping Name="GANHADOR">
+      <EntityTypeMapping TypeName="TRABALHOModel.GANHADOR">
+        <MappingFragment StoreEntitySet="GANHADOR">
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+          <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGIN">
+      <EntityTypeMapping TypeName="TRABALHOModel.LOGIN">
+        <MappingFragment StoreEntitySet="LOGIN">
+          <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+          <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RESTAURANTE">
+      <EntityTypeMapping TypeName="TRABALHOModel.RESTAURANTE">
+        <MappingFragment StoreEntitySet="RESTAURANTE">
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOTACAO">
+      <EntityTypeMapping TypeName="TRABALHOModel.VOTACAO">
+        <MappingFragment StoreEntitySet="VOTACAO">
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+          <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+          <ScalarProperty Name="LOGIN_ID" ColumnName="LOGIN_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GANHADORES">
+      <EntityTypeMapping TypeName="TRABALHOModel.GANHADORES">
+        <MappingFragment StoreEntitySet="GANHADORES">
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MAIS_VOTADOS">
+      <EntityTypeMapping TypeName="TRABALHOModel.MAIS_VOTADOS">
+        <MappingFragment StoreEntitySet="MAIS_VOTADOS">
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+          <ScalarProperty Name="NOME" ColumnName="NOME" />
+          <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VOTACOES">
+      <EntityTypeMapping TypeName="TRABALHOModel.VOTACOES">
+        <MappingFragment StoreEntitySet="VOTACOES">
+          <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+          <ScalarProperty Name="LOGIN_NOME" ColumnName="LOGIN_NOME" />
+          <ScalarProperty Name="RESTAURANTE_NOME" ColumnName="RESTAURANTE_NOME" />
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+          <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+          <ScalarProperty Name="LOGIN_ID" ColumnName="LOGIN_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

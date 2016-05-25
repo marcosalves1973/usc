@@ -1,0 +1,4 @@
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Helpers\bin\Release\Trabalho.Helpers.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Helpers\bin\Release\Trabalho.Helpers.pdb
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Helpers\obj\Release\Trabalho.Helpers.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Helpers\obj\Release\Trabalho.Helpers.pdb

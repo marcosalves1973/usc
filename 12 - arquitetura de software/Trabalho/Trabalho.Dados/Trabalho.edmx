@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TRABALHOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="GANHADOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+          <Property Name="DATA" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SENHA" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TOKEN" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="RESTAURANTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VOTACAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LOGIN_ID" Type="bigint" Nullable="false" />
+          <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+          <Property Name="DATA" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TRABALHO.dbo.GANHADORES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GANHADORES">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="RESTAURANTE_ID" />
+            <PropertyRef Name="NOME" />
+            <PropertyRef Name="DATA" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DATA" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TRABALHO.dbo.MAIS_VOTADOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MAIS_VOTADOS">
+          <Key>
+            <PropertyRef Name="RESTAURANTE_ID" />
+            <PropertyRef Name="NOME" />
+          </Key>
+          <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+          <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TOTAL" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TRABALHO.dbo.VOTACOES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VOTACOES">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="LOGIN_ID" />
+            <PropertyRef Name="RESTAURANTE_ID" />
+            <PropertyRef Name="DATA" />
+            <PropertyRef Name="RESTAURANTE_NOME" />
+            <PropertyRef Name="LOGIN_NOME" />
+            <PropertyRef Name="USUARIO" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="LOGIN_ID" Type="bigint" Nullable="false" />
+          <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
+          <Property Name="DATA" Type="datetime" Nullable="false" />
+          <Property Name="RESTAURANTE_NOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LOGIN_NOME" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TRABALHOModelStoreContainer">
+          <EntitySet Name="GANHADOR" EntityType="Self.GANHADOR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGIN" EntityType="Self.LOGIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RESTAURANTE" EntityType="Self.RESTAURANTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VOTACAO" EntityType="Self.VOTACAO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GANHADORES" EntityType="Self.GANHADORES" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[GANHADORES].[ID] AS [ID], 
+[GANHADORES].[RESTAURANTE_ID] AS [RESTAURANTE_ID], 
+[GANHADORES].[NOME] AS [NOME], 
+[GANHADORES].[DATA] AS [DATA]
+FROM [dbo].[GANHADORES] AS [GANHADORES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="MAIS_VOTADOS" EntityType="Self.MAIS_VOTADOS" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[MAIS_VOTADOS].[RESTAURANTE_ID] AS [RESTAURANTE_ID], 
+[MAIS_VOTADOS].[NOME] AS [NOME], 
+[MAIS_VOTADOS].[TOTAL] AS [TOTAL]
+FROM [dbo].[MAIS_VOTADOS] AS [MAIS_VOTADOS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VOTACOES" EntityType="Self.VOTACOES" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[VOTACOES].[ID] AS [ID], 
+[VOTACOES].[LOGIN_ID] AS [LOGIN_ID], 
+[VOTACOES].[RESTAURANTE_ID] AS [RESTAURANTE_ID], 
+[VOTACOES].[DATA] AS [DATA], 
+[VOTACOES].[RESTAURANTE_NOME] AS [RESTAURANTE_NOME], 
+[VOTACOES].[LOGIN_NOME] AS [LOGIN_NOME], 
+[VOTACOES].[USUARIO] AS [USUARIO]
+FROM [dbo].[VOTACOES] AS [VOTACOES]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TRABALHOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TRABALHOEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GANHADOR" EntityType="TRABALHOModel.GANHADOR" />
+          <EntitySet Name="LOGIN" EntityType="TRABALHOModel.LOGIN" />
+          <EntitySet Name="RESTAURANTE" EntityType="TRABALHOModel.RESTAURANTE" />
+          <EntitySet Name="VOTACAO" EntityType="TRABALHOModel.VOTACAO" />
+          <EntitySet Name="GANHADORES" EntityType="TRABALHOModel.GANHADORES" />
+          <EntitySet Name="MAIS_VOTADOS" EntityType="TRABALHOModel.MAIS_VOTADOS" />
+          <EntitySet Name="VOTACOES" EntityType="TRABALHOModel.VOTACOES" />
+        </EntityContainer>
+        <EntityType Name="GANHADOR">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="LOGIN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SENHA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TOKEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RESTAURANTE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="VOTACAO">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LOGIN_ID" Type="Int64" Nullable="false" />
+          <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="GANHADORES">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="RESTAURANTE_ID" />
+            <PropertyRef Name="NOME" />
+            <PropertyRef Name="DATA" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="MAIS_VOTADOS">
+          <Key>
+            <PropertyRef Name="RESTAURANTE_ID" />
+            <PropertyRef Name="NOME" />
+          </Key>
+          <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
+          <Property Name="NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TOTAL" Type="Int32" />
+        </EntityType>
+        <EntityType Name="VOTACOES">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="LOGIN_ID" />
+            <PropertyRef Name="RESTAURANTE_ID" />
+            <PropertyRef Name="DATA" />
+            <PropertyRef Name="RESTAURANTE_NOME" />
+            <PropertyRef Name="LOGIN_NOME" />
+            <PropertyRef Name="USUARIO" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="LOGIN_ID" Type="Int64" Nullable="false" />
+          <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RESTAURANTE_NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LOGIN_NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="USUARIO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TRABALHOModelStoreContainer" CdmEntityContainer="TRABALHOEntities">
+          <EntitySetMapping Name="GANHADOR">
+            <EntityTypeMapping TypeName="TRABALHOModel.GANHADOR">
+              <MappingFragment StoreEntitySet="GANHADOR">
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOGIN">
+            <EntityTypeMapping TypeName="TRABALHOModel.LOGIN">
+              <MappingFragment StoreEntitySet="LOGIN">
+                <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+                <ScalarProperty Name="SENHA" ColumnName="SENHA" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RESTAURANTE">
+            <EntityTypeMapping TypeName="TRABALHOModel.RESTAURANTE">
+              <MappingFragment StoreEntitySet="RESTAURANTE">
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VOTACAO">
+            <EntityTypeMapping TypeName="TRABALHOModel.VOTACAO">
+              <MappingFragment StoreEntitySet="VOTACAO">
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+                <ScalarProperty Name="LOGIN_ID" ColumnName="LOGIN_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GANHADORES">
+            <EntityTypeMapping TypeName="TRABALHOModel.GANHADORES">
+              <MappingFragment StoreEntitySet="GANHADORES">
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MAIS_VOTADOS">
+            <EntityTypeMapping TypeName="TRABALHOModel.MAIS_VOTADOS">
+              <MappingFragment StoreEntitySet="MAIS_VOTADOS">
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+                <ScalarProperty Name="NOME" ColumnName="NOME" />
+                <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VOTACOES">
+            <EntityTypeMapping TypeName="TRABALHOModel.VOTACOES">
+              <MappingFragment StoreEntitySet="VOTACOES">
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="LOGIN_NOME" ColumnName="LOGIN_NOME" />
+                <ScalarProperty Name="RESTAURANTE_NOME" ColumnName="RESTAURANTE_NOME" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="RESTAURANTE_ID" ColumnName="RESTAURANTE_ID" />
+                <ScalarProperty Name="LOGIN_ID" ColumnName="LOGIN_ID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

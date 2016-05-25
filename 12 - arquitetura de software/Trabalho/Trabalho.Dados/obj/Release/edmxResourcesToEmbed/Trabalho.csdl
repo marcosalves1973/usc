@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TRABALHOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="LOGIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="USUARIO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="SENHA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TOKEN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RESTAURANTE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TRABALHOEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="LOGIN" EntityType="Self.LOGIN" />
+    <EntitySet Name="RESTAURANTE" EntityType="Self.RESTAURANTE" />
+    <EntitySet Name="GANHADOR" EntityType="TRABALHOModel.GANHADOR" />
+    <EntitySet Name="VOTACAO" EntityType="TRABALHOModel.VOTACAO" />
+  </EntityContainer>
+  <EntityType Name="GANHADOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
+    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="VOTACAO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOGIN_ID" Type="Int64" Nullable="false" />
+    <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
+    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+</Schema>

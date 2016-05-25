@@ -1,0 +1,11 @@
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\bin\Release\Trabalho.Negocios.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\bin\Release\Trabalho.Negocios.pdb
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\bin\Release\Trabalho.Dados.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\bin\Release\Trabalho.Helpers.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\bin\Release\EntityFramework.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\bin\Release\Trabalho.Dados.pdb
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\bin\Release\Trabalho.Helpers.pdb
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\bin\Release\EntityFramework.xml
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\obj\Release\Trabalho.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\obj\Release\Trabalho.Negocios.dll
+C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Negocios\obj\Release\Trabalho.Negocios.pdb
