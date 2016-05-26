@@ -8,3 +8,13 @@ C:\Users\renato\Documents\Visual Studio 2013\Projects\Trabalho\Trabalho.Dados\ob
 C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Dados\obj\Debug\Trabalho.Dados.csprojResolveAssemblyReference.cache
 C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Dados\bin\Debug\Trabalho.Helpers.dll
 C:\Users\renato\documents\visual studio 2013\Projects\Trabalho\Trabalho.Dados\bin\Debug\Trabalho.Helpers.pdb
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\bin\Debug\Trabalho.Dados.dll.config
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\bin\Debug\Trabalho.Dados.dll
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\bin\Debug\Trabalho.Dados.pdb
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\bin\Debug\EntityFramework.dll
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\bin\Debug\Trabalho.Helpers.dll
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\bin\Debug\Trabalho.Helpers.pdb
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\bin\Debug\EntityFramework.xml
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\obj\Debug\Trabalho.Dados.csprojResolveAssemblyReference.cache
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\obj\Debug\Trabalho.Dados.dll
+C:\Users\renato\Desktop\Trabalho\Trabalho.Dados\obj\Debug\Trabalho.Dados.pdb

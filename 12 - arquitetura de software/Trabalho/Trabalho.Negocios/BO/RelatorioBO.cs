@@ -61,7 +61,7 @@ namespace Trabalho.Negocios.BO
                 }
                 else
                 {
-                    retorno.mensagem = "Nenhum restaurante ganhou semana passada";
+                    retorno.mensagem = "Nenhum restaurante ganhou semana passada.";
                 }
 
                 return retorno;
@@ -90,7 +90,7 @@ namespace Trabalho.Negocios.BO
                 }
                 else
                 {
-                    retorno.mensagem = "Nenhum restaurante ganhou semana passada";
+                    retorno.mensagem = "Nenhum restaurante ganhou.";
                 }
 
                 return retorno;

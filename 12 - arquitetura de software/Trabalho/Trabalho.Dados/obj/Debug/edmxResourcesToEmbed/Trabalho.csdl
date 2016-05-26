@@ -15,7 +15,7 @@
     </Key>
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
-    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
   <EntityType Name="LOGIN">
     <Key>
@@ -41,7 +41,7 @@
     <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="LOGIN_ID" Type="Int64" Nullable="false" />
     <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
-    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
   <EntityType Name="GANHADORES">
     <Key>
@@ -53,7 +53,7 @@
     <Property Name="ID" Type="Int64" Nullable="false" />
     <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
     <Property Name="NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
   <EntityType Name="MAIS_VOTADOS">
     <Key>
@@ -77,7 +77,7 @@
     <Property Name="ID" Type="Int64" Nullable="false" />
     <Property Name="LOGIN_ID" Type="Int64" Nullable="false" />
     <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
-    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="RESTAURANTE_NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="LOGIN_NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="USUARIO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />

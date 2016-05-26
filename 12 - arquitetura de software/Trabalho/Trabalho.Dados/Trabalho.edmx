@@ -11,7 +11,7 @@
           </Key>
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
-          <Property Name="DATA" Type="datetime" Nullable="false" />
+          <Property Name="DATA" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="LOGIN">
           <Key>
@@ -37,7 +37,7 @@
           <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LOGIN_ID" Type="bigint" Nullable="false" />
           <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
-          <Property Name="DATA" Type="datetime" Nullable="false" />
+          <Property Name="DATA" Type="date" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'TRABALHO.dbo.GANHADORES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -51,7 +51,7 @@ warning 6002: The table/view 'TRABALHO.dbo.GANHADORES' does not have a primary k
           <Property Name="ID" Type="bigint" Nullable="false" />
           <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
           <Property Name="NOME" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="DATA" Type="datetime" Nullable="false" />
+          <Property Name="DATA" Type="date" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'TRABALHO.dbo.MAIS_VOTADOS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -79,7 +79,7 @@ warning 6002: The table/view 'TRABALHO.dbo.VOTACOES' does not have a primary key
           <Property Name="ID" Type="bigint" Nullable="false" />
           <Property Name="LOGIN_ID" Type="bigint" Nullable="false" />
           <Property Name="RESTAURANTE_ID" Type="bigint" Nullable="false" />
-          <Property Name="DATA" Type="datetime" Nullable="false" />
+          <Property Name="DATA" Type="date" Nullable="false" />
           <Property Name="RESTAURANTE_NOME" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="LOGIN_NOME" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="USUARIO" Type="varchar" MaxLength="100" Nullable="false" />
@@ -135,7 +135,7 @@ FROM [dbo].[VOTACOES] AS [VOTACOES]</DefiningQuery>
           </Key>
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
-          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="LOGIN">
           <Key>
@@ -161,7 +161,7 @@ FROM [dbo].[VOTACOES] AS [VOTACOES]</DefiningQuery>
           <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="LOGIN_ID" Type="Int64" Nullable="false" />
           <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
-          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="GANHADORES">
           <Key>
@@ -173,7 +173,7 @@ FROM [dbo].[VOTACOES] AS [VOTACOES]</DefiningQuery>
           <Property Name="ID" Type="Int64" Nullable="false" />
           <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
           <Property Name="NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="MAIS_VOTADOS">
           <Key>
@@ -197,7 +197,7 @@ FROM [dbo].[VOTACOES] AS [VOTACOES]</DefiningQuery>
           <Property Name="ID" Type="Int64" Nullable="false" />
           <Property Name="LOGIN_ID" Type="Int64" Nullable="false" />
           <Property Name="RESTAURANTE_ID" Type="Int64" Nullable="false" />
-          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DATA" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="RESTAURANTE_NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="LOGIN_NOME" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="USUARIO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
