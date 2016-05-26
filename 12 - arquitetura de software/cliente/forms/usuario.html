@@ -1,0 +1,67 @@
+<div class="panel panel-default">
+    <div class="panel-heading topo-painel">
+        <h4>
+            Usuários
+        </h4>
+        <div class="btn-group alinhar-direita" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalManutencao">Novo</button>
+        </div>
+        <div class="limpar"></div>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th width='95%'>(Código) Nome</th>
+                <th align="">Editar</th>
+            </tr>
+        </thead>
+        <tbody id="listagem">
+
+        </tbody>
+    </table>
+</div>
+
+<div class="modal fade" id="modalManutencao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel"><span id="titulo_modal">Inserir</span> Usuário</h4>
+            </div>
+            <div class="modal-body">
+                <form id="manutencao" name="manutencao">
+                    <input type="hidden" id="id" name="id" value="0" />
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Nome</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" id="nome" name="nome">
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Usuário</span>
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" id="usuario" name="usuario">
+                    </div>
+                    <br />
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">Senha</span>
+                        <input type="password" class="form-control" aria-describedby="basic-addon1" id="senha" name="senha">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary" onclick="salvarUsuario()">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('#modalManutencao').on('hidden.bs.modal', function (e) {
+        $("#titulo_modal").html("Inserir");
+        $("#manutencao #id").val('0');
+        $("#manutencao #nome").val('');
+        $("#manutencao #usuario").val('');
+        $("#manutencao #senha").val('');
+    })
+    listaUsuarios();
+</script>

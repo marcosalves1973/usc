@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Login</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+
+    <body>
+        <nav id="menu" class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="javascript:carrega('forms/home')">
+                        Trabalho
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="javascript:carrega('forms/usuario')">Usuários</a></li>
+                        <li><a href="javascript:carrega('forms/restaurante')">Restaurantes</a></li>
+                        <li><a href="javascript:carrega('forms/home')">Votação</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatórios <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:carrega('relatorios/parcial');">Ranking parcial</a></li>
+                                <li><a href="javascript:carrega('relatorios/semana_passada');">Restaurantes da semana passada</a></li>
+                                <li><a href="javascript:carrega('relatorios/mais_votado');">Restaurantes mais votados</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usuário <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:carrega('forms/usuario', editarUsuario, $('#formLogin #id').val());">Editar</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="index.html">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid" id="conteiner">
+            <div id="pageLogin">
+                <form name="formLogin" id="formLogin" class="form-signin" onsubmit="fazer_login(); return false;">
+                    <center>
+                        <input type="hidden" id='id' name="id">
+                        <h2 class="form-signin-heading">LOGIN</h2>
+                        <input type="text" class="form-control" id='usuario' placeholder="Usuário" name="usuario">
+                        <input type="password" class="form-control" id='senha' placeholder="senha" name="senha">
+                        <button class="btn btn-lg btn-primary btn-block">Fazer login</button>
+                    </center>
+                </form>
+            </div>
+            <div id="pageMain"></div>
+        </div> <!-- /container -->
+
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/all.js"></script>
+        <script src="js/usuario.js"></script>
+        <script src="js/relatorios.js"></script>
+        <script src="js/restaurante.js"></script>
+        <script src="js/votacao.js"></script>
+    </body>
+</html>
