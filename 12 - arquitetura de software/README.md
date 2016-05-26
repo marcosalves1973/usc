@@ -26,9 +26,7 @@ Repositório do trabalho do Enedy
 
 **Não use o Internet Explorer, use o Google Chrome ou o Safari para testar o projeto**
 
-
-**_No Google Chrome_**
-<br />
+#Configurando o Google Chrome
 Para não ter o problema de carregamento "Cross Domain" por carregar arquivos por ajax, realize a seguinte configuração:
 
   - Clique com o botão direito do mouse no icone do Google Chrome
