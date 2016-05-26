@@ -25,3 +25,14 @@ Repositório do trabalho do Enedy
     * Encontre o "password" e coloque a senha do seu Sql Server
 
 **Não use o Internet Explorer, use o Google Chrome ou o Safari para testar o projeto**
+
+
+** * No Google Chrome * **
+Para não ter o problema de carregamento "Cross Domain" por carregar arquivos por ajax, realize a seguinte configuração:
+
+  - Clique com o botão direito do mouse no icone do Google Chrome
+  - Clique com o botão direito do mouse no Google Chrome do menu que abrir
+  - Clique em Propriedades
+  - No campo "Destino", coloque no final: " --allow-file-access-from-files"
+  - Clique em aplicar e fechar
+  - Reinicie o Google Chrome
