@@ -24,7 +24,7 @@ Repositório do trabalho do Enedy
     * Encontre o "user id" e coloque o usuário do seu Sql Server
     * Encontre o "password" e coloque a senha do seu Sql Server
 
-**Não use o Internet Explorer, use o Google Chrome ou o Safari para testar o projeto**
+**Não use o Internet Explorer, usei o Google Chrome para testar o projeto, não garanto que funcione em outros navegadores**
 
 ####Configurando o Google Chrome
 Para não ter o problema de carregamento "Cross Domain" por carregar arquivos por ajax, realize a seguinte configuração:
