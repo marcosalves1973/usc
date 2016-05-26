@@ -1,7 +1,7 @@
-# usc - arquitetura de software
+# USC - arquitetura de software
 Repositório do trabalho do Enedy
 
-##Subindo o dump
+####Subindo o dump
 
   - Execute primeiramente o "CREATE DATABASE"
   - Depois execute o "USE"
@@ -9,7 +9,7 @@ Repositório do trabalho do Enedy
   - Depois execute todos os "CREATE VIEW" (Execute um por um, sim, o SQL é chato xD)
   - Depois execute todos os "INSERTS" (Pode executar todos juntos)
 
-##Configurando o projeto
+####Configurando o projeto
   - Abra o projeto no Visual Studio 2013
   - Abra o Arquivo: Dados -> Trabalho.Dados -> App.Config, linha 8
     * Encontre o "data source=" e coloque o host da sua máquina
@@ -26,7 +26,7 @@ Repositório do trabalho do Enedy
 
 **Não use o Internet Explorer, use o Google Chrome ou o Safari para testar o projeto**
 
-##Configurando o Google Chrome
+####Configurando o Google Chrome
 Para não ter o problema de carregamento "Cross Domain" por carregar arquivos por ajax, realize a seguinte configuração:
 
   - Clique com o botão direito do mouse no icone do Google Chrome
