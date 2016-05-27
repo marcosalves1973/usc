@@ -27,11 +27,6 @@ function fazer_login() {
         "senha" : $("#formLogin #senha").val()
     }
 
-//dev
-    login = {
-        "usuario" : "renato",
-        "senha" : "123456"
-    }
     $.ajax({
         url: url_padrao+'/login/logar',
         type: 'POST',
